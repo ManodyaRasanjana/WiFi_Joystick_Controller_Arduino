@@ -1,0 +1,56 @@
+#######################################
+# Syntax Coloring Map For WiFi_Joystick_Controller
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+
+WiFi_Joystick_Controller    KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+init    KEYWORD2
+update  KEYWORD2
+setDataValidationTimeout  KEYWORD2
+getDataValidStatus  KEYWORD2
+getJoystick KEYWORD2
+getButtonGroupValue KEYWORD2
+getButtonGroupMode  KEYWORD2
+getButtonValue  KEYWORD2
+sendReply   KEYWORD2
+getIpAddress    KEYWORD2
+getPortNumber   KEYWORD2
+_initAP KEYWORD2
+_initSTA    KEYWORD2
+_initUDP    KEYWORD2
+_calcBtnValues  KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+_UDP    KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+WJC_ERR_OK  LITERAL1
+WJC_WIFI_MODE_AP    LITERAL1
+WJC_WIFI_MODE_STA   LITERAL1
+WJC_LEFT_JOYSTICK   LITERAL1
+WJC_RIGHT_JOYSTICK  LITERAL1
+WJC_X_AXIS  LITERAL1
+WJC_Y_AXIS  LITERAL1
+WJC_BTN_GROUP_A LITERAL1
+WJC_BTN_GROUP_B LITERAL1
+WJC_BTN_1   LITERAL1
+WJC_BTN_2   LITERAL1
+WJC_BTN_3   LITERAL1
+WJC_BTN_GROUP_MODE  LITERAL1
+WJC_BTN_GROUP_VALUE LITERAL1
+WJC_BTN_GROUP_SINGLE    LITERAL1
+WJC_BTN_GROUP_MULTI LITERAL1
