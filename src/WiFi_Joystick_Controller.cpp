@@ -5,9 +5,9 @@
  *
  * @author Manodya Rasanjana <manodya@srqrobotics.com>
  *
- * @version 1.0.0
+ * @version 1.0.1
  *
- * @date 2024-01-01
+ * @date 2024-01-14
  *
  * @url https://github.com/srqrobotics/WiFi_Joystick_Controller
  *
@@ -29,30 +29,6 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
- *
- * -----
- *
- * Additionally, this library incorporates code from the ArduinoJson project,
- * which is licensed under the MIT License. The original copyright notice
- * and license terms are included below:
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this
- * software and associated documentation files (the “Software”), to deal in the Software
- * without restriction, including without limitation the rights to use, copy, modify, merge,
- * publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
- * to whom the Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or
- * substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
- * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
  */
 
 #include "WiFi_joystick_controller.h"
@@ -261,16 +237,16 @@ uint8_t WiFi_Joystick_Controller::update(bool sendValidationMessage)
     return err;
 }
 
-void WiFi_Joystick_Controller::setDataValidationTimeout(uint16_t timeout_ms)
+void WiFi_Joystick_Controller::setDataValidTimeout(uint16_t timeout_ms)
 {
-    _validationTimeout_ms = timeout_ms;
+    _dataValidTime_ms = timeout_ms;
 }
 
 uint8_t WiFi_Joystick_Controller::getDataValidStatus(void)
 {
     uint8_t err = WJC_ERR_OK;
 
-    if (millis() - _lastUpdated_ms >= _validationTimeout_ms)
+    if (millis() - _lastUpdated_ms >= _dataValidTime_ms)
     {
         err = 1; // timeout occurred
     }

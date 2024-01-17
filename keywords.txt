@@ -14,7 +14,7 @@ WiFi_Joystick_Controller    KEYWORD1
 
 init    KEYWORD2
 update  KEYWORD2
-setDataValidationTimeout  KEYWORD2
+setDataValidTimeout  KEYWORD2
 getDataValidStatus  KEYWORD2
 getJoystick KEYWORD2
 getButtonGroupValue KEYWORD2

@@ -5,9 +5,9 @@
  *
  * @author Manodya Rasanjana <manodya@srqrobotics.com>
  *
- * @version 1.0.0
+ * @version 1.0.1
  *
- * @date 2024-01-01
+ * @date 2024-01-14
  *
  * @url https://github.com/srqrobotics/WiFi_Joystick_Controller
  *
@@ -29,37 +29,13 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
- *
- * -----
- *
- * Additionally, this library incorporates code from the ArduinoJson project,
- * which is licensed under the MIT License. The original copyright notice
- * and license terms are included below:
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this
- * software and associated documentation files (the “Software”), to deal in the Software
- * without restriction, including without limitation the rights to use, copy, modify, merge,
- * publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
- * to whom the Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or
- * substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
- * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
  */
 
 #ifndef __SRQ_WIFI_JOYSTICK_CONTROLLER_H__
 #define __SRQ_WIFI_JOYSTICK_CONTROLLER_H__
 
 #include <Arduino.h>
-#include "ArduinoJson/ArduinoJson-v6.21.4.h" // special thanks to Benoit BLANCHON (https://arduinojson.org)
+#include <ArduinoJson.h> // special thanks to Benoit BLANCHON (https://arduinojson.org)
 
 // WiFi libraries
 #if defined(ARDUINO_ARCH_ESP32) || defined(ARDUINO_ARCH_ESP8266)
@@ -199,11 +175,11 @@ public:
     uint8_t update(bool sendValidationMessage = true);
 
     /**
-     * @fn setDataValidationTimeout
+     * @fn setDataValidTimeout
      * @brief set the timeout for the getDataValidStatus()
-     * @param timeout_ms timeout in Millisecond
+     * @param timeout_ms timeout in milliSeconds
      */
-    void setDataValidationTimeout(uint16_t timeout_ms);
+    void setDataValidTimeout(uint16_t timeout_ms);
 
     /**
      * @fn getDataValidStatus
@@ -338,10 +314,10 @@ private:
     IPAddress _ipAddress = IPAddress(0, 0, 0, 0);
 
     // time flag of the last successful updated
-    uint16_t _validationTimeout_ms = 500;
+    uint16_t _dataValidTime_ms = 500;
     unsigned long _lastUpdated_ms;
 
-    // WiFi init flag. This variable will share between all of the library instances
+    // WiFi init flag. This variable will be shared between all of the library instances
     static bool WJC_WIFI_INIT;
 };
 
