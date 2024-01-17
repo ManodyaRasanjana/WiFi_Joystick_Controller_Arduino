@@ -56,8 +56,8 @@ void setup() {
   Serial.print(" with the UDP port number ");
   Serial.println(remote.getPortNumber());
 
-  // set timeout for data validation period
-  remote.setDataValidationTimeout(500);
+  // set timeout (milliSeconds) for data validation period
+  remote.setDataValidTimeout(500);
 }
 
 void loop() {

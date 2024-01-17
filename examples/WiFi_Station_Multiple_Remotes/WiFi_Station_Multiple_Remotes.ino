@@ -62,9 +62,9 @@ void setup() {
   Serial.print(" and ");
   Serial.println(remote2.getPortNumber());
 
-  // set timeout for data validation period
-  remote1.setDataValidationTimeout(500);
-  remote2.setDataValidationTimeout(500);
+  // set timeout (milliSeconds) for data validation period
+  remote1.setDataValidTimeout(500);
+  remote2.setDataValidTimeout(500);
 }
 
 void loop() {
